@@ -18,6 +18,63 @@ Outputs:
 Number of gifts required:  50
 Only include villagers in town:  true
 Allow repeat gifts:  true
+Include recipes:  false
+Include trinkets:  false
+Gifts Per Villager:
+┌───────────┬────────────────┬────────────────┐
+│ (index)   │ 0              │ 1              │
+├───────────┼────────────────┼────────────────┤
+│ maru      │ 'Diamond'      │ 'Diamond'      │
+│ penny     │ 'Diamond'      │ 'Diamond'      │
+│ evelyn    │ 'Diamond'      │ 'Diamond'      │
+│ gus       │ 'Diamond'      │ 'Diamond'      │
+│ jodi      │ 'Diamond'      │ 'Diamond'      │
+│ krobus    │ 'Diamond'      │ 'Diamond'      │
+│ marnie    │ 'Diamond'      │ 'Diamond'      │
+│ willy     │ 'Diamond'      │ 'Diamond'      │
+│ abigail   │ 'Amethyst'     │ 'Amethyst'     │
+│ emily     │ 'Amethyst'     │ 'Amethyst'     │
+│ clint     │ 'Amethyst'     │ 'Amethyst'     │
+│ dwarf     │ 'Amethyst'     │ 'Amethyst'     │
+│ sam       │ 'Cactus Fruit' │ 'Cactus Fruit' │
+│ linus     │ 'Cactus Fruit' │ 'Cactus Fruit' │
+│ pam       │ 'Cactus Fruit' │ 'Cactus Fruit' │
+│ elliot    │ 'Duck Feather' │ 'Duck Feather' │
+│ harvey    │ 'Wine'         │ 'Wine'         │
+│ leah      │ 'Wine'         │ 'Wine'         │
+│ sebastian │ 'Void Egg'     │ 'Void Egg'     │
+│ shane     │ 'Beer'         │ 'Beer'         │
+│ lewis     │ 'Hot Pepper'   │ 'Hot Pepper'   │
+│ haley     │ 'Coconut'      │ 'Coconut'      │
+│ robin     │ 'Goat Cheese'  │ 'Goat Cheese'  │
+│ demetrius │ 'Strawberry'   │ 'Strawberry'   │
+│ caroline  │ 'Green Tea'    │ 'Green Tea'    │
+└───────────┴────────────────┴────────────────┘
+Item Totals Needed:
+┌──────────────┬────────┐
+│ (index)      │ Values │
+├──────────────┼────────┤
+│ Diamond      │ 16     │
+│ Amethyst     │ 8      │
+│ Cactus Fruit │ 6      │
+│ Duck Feather │ 2      │
+│ Wine         │ 4      │
+│ Void Egg     │ 2      │
+│ Beer         │ 2      │
+│ Hot Pepper   │ 2      │
+│ Coconut      │ 2      │
+│ Goat Cheese  │ 2      │
+│ Strawberry   │ 2      │
+│ Green Tea    │ 2      │
+└──────────────┴────────┘
+```
+
+```
+Number of gifts required:  50
+Only include villagers in town:  true
+Allow repeat gifts:  true
+Include recipes:  true
+Include trinkets:  true
 Gifts Per Villager:
 ┌───────────┬────────────────────┬────────────────────┐
 │ (index)   │ 0                  │ 1                  │
@@ -82,6 +139,8 @@ Pizza
 Number of gifts required:  50
 Only include villagers in town:  false
 Allow repeat gifts:  true
+Include recipes:  true
+Include trinkets:  true
 Gifts Per Villager:
 ┌───────────┬────────────────────┬────────────────────┐
 │ (index)   │ 0                  │ 1                  │
@@ -145,6 +204,8 @@ Pizza
 Number of gifts required:  50
 Only include villagers in town:  true
 Allow repeat gifts:  false
+Include recipes:  true
+Include trinkets:  true
 Gifts Per Villager:
 ┌───────────┬────────────────────┬──────────────────┐
 │ (index)   │ 0                  │ 1                │
@@ -235,6 +296,8 @@ Fish Taco
 Number of gifts required:  50
 Only include villagers in town:  false
 Allow repeat gifts:  false
+Include recipes:  true
+Include trinkets:  true
 Gifts Per Villager:
 ┌───────────┬────────────────────┬──────────────────┐
 │ (index)   │ 0                  │ 1                │

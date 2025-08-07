@@ -131,6 +131,8 @@ if (includeRecipes) {
 console.log('Number of gifts required: ', desiredGifts);
 console.log('Only include villagers in town: ', townOnly);
 console.log('Allow repeat gifts: ', allowDoubles);
+console.log('Include recipes: ', includeRecipes);
+console.log('Include trinkets: ', includeTrinkets);
 
 console.log('Gifts Per Villager:');
 console.table(giftList);
