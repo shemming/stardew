@@ -48,6 +48,7 @@ for (let villager in villagers) {
     if (!includeRecipes && item in recipes) {
       continue;
     }
+    // don't add trinkets to the list if they are excluded
     if (!includeTrinkets && TRINKETS.includes(item)) {
       continue;
     }
