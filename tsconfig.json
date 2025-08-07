@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "target": "es2024",
+      "allowJs": false,
+      "resolveJsonModule": true,
+      "isolatedModules": true,
+    }
+  }
