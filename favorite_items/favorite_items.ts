@@ -5,6 +5,19 @@ import recipes_json from './recipe_ingredients.json';
 let desiredGifts = 50;
 let allowDoubles = true;
 let townOnly = true;
+let includeRecipes = false;
+let includeTrinkets = false;
+
+const TRINKETS = [
+  'Basilisk Paw',
+  'Fairy Box',
+  'Frog Egg',
+  'Golden Spur',
+  'Ice Rod',
+  'Magic Hair Gel',
+  'Magic Quiver',
+  'Parrot Egg',
+];
 
 // An object with the key being the villager's name
 type Villagers = Record<string, Villager>;
@@ -30,11 +43,20 @@ Object.assign(recipes, recipes_json);
 let favorites: Record<string, Array<string>> = {};
 
 for (let villager in villagers) {
-  villagers[villager].lovedGifts.forEach((item) => {
+  for (let item of villagers[villager].lovedGifts) {
+    // don't add recipes to the list if they are excluded
+    if (!includeRecipes && item in recipes) {
+      continue;
+    }
+    // don't add trinkets to the list if they are excluded
+    if (!includeTrinkets && TRINKETS.includes(item)) {
+      continue;
+    }
+
     favorites[item]
       ? favorites[item].push(villager)
       : (favorites[item] = [villager]);
-  });
+  }
 }
 
 // filter out any entries that have just one villager who loves the item
@@ -97,17 +119,21 @@ while (givenGifts < desiredGifts && i < sortedFavorites.length) {
   i++;
 }
 
-// if gifts are recipes, collect their ingredients list
+// if gifts include recipes, collect their ingredients list
 let ingredientsNeeded: Recipes = {};
-for (let item in itemsNeeded) {
-  if (item in recipes) {
-    ingredientsNeeded[item] = recipes[item];
+if (includeRecipes) {
+  for (let item in itemsNeeded) {
+    if (item in recipes) {
+      ingredientsNeeded[item] = recipes[item];
+    }
   }
 }
 
 console.log('Number of gifts required: ', desiredGifts);
 console.log('Only include villagers in town: ', townOnly);
 console.log('Allow repeat gifts: ', allowDoubles);
+console.log('Include recipes: ', includeRecipes);
+console.log('Include trinkets: ', includeTrinkets);
 
 console.log('Gifts Per Villager:');
 console.table(giftList);
@@ -115,13 +141,15 @@ console.table(giftList);
 console.log('Item Totals Needed:');
 console.table(itemsNeeded);
 
-console.log('Ingredients for Recipes Needed: ');
-for (let recipe in ingredientsNeeded) {
-  console.group(recipe);
-  ingredientsNeeded[recipe].forEach((ingredient) =>
-    console.log('- ', ingredient)
-  );
-  console.groupEnd();
+if (Object.keys(ingredientsNeeded).length) {
+  console.log('Ingredients for Recipes Needed: ');
+  for (let recipe in ingredientsNeeded) {
+    console.group(recipe);
+    ingredientsNeeded[recipe].forEach((ingredient) =>
+      console.log('- ', ingredient)
+    );
+    console.groupEnd();
+  }
 }
 
 function addItemToList(
